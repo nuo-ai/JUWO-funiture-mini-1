@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUWO桔屋 - 联系我们</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+        }
+        .header {
+            background-color: #fff;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #FFF0E6;
+            color: #FF8C42;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 12px;
+        }
+        .section-title:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: #FF8C42;
+            border-radius: 2px;
+        }
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .form-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            resize: vertical;
+            min-height: 80px;
+        }
+        .cta-button {
+            background-color: #FF8C42;
+            color: white;
+            padding: 12px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+        }
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+        .about-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div class="w-full text-center font-medium">联系我们</div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="px-4 py-4">
+        <!-- 企业介绍 -->
+        <section class="mb-6">
+            <div class="about-card">
+                <div class="flex items-center mb-4">
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="JUWO桔屋">
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold">JUWO桔屋</h2>
+                        <p class="text-sm text-gray-500">Home Furnishing</p>
+                        <div class="flex items-center mt-1">
+                            <div class="px-2 py-1 bg-orange-100 text-orange-500 text-xs rounded-md">
+                                <i class="fas fa-check-circle mr-1"></i> 官方认证
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-600 leading-6">
+                    JUWO桔屋专注为悉尼国际留学生提供平价、经过专业清洁消毒的二手家具套餐服务，所有套餐均包含一年期回购服务，让您的留学生活既温馨舒适，又经济实惠。
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系信息 -->
+        <section class="mb-6">
+            <h2 class="section-title">联系方式</h2>
+            
+            <!-- 微信联系 -->
+            <div class="bg-white p-4 rounded-lg mb-4 text-center">
+                <h3 class="font-bold mb-3">微信扫码联系客服</h3>
+                <div class="qr-code mb-3 relative">
+                    <!-- 放置微信二维码图片 -->
+                    <i class="fab fa-weixin text-5xl text-green-500"></i>
+                    <div class="absolute inset-0 flex items-center justify-center text-xs text-gray-500">
+                        微信二维码
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm">微信号：JUWO_Sydney</p>
+                <p class="text-xs text-gray-500 mt-2">工作时间: 周一至周日 9:00-21:00</p>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                    <h3 class="font-medium text-sm">电话联系</h3>
+                    <p class="text-gray-500 text-xs">+61 4XX XXX XXX</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                    <h3 class="font-medium text-sm">邮箱联系</h3>
+                    <p class="text-gray-500 text-xs">contact@juwo.com.au</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                    <h3 class="font-medium text-sm">服务区域</h3>
+                    <p class="text-gray-500 text-xs">悉尼全区域，免费配送安装</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 预约表单 -->
+        <section class="mb-6">
+            <h2 class="section-title">快速预约</h2>
+            <div class="bg-white p-4 rounded-lg">
+                <form>
+                    <div class="mb-4">
+                        <label class="form-label" for="name">您的姓名</label>
+                        <input type="text" id="name" class="form-input" placeholder="请输入您的姓名">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" for="contact">联系方式</label>
+                        <input type="text" id="contact" class="form-input" placeholder="微信号或手机号">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" for="package">意向套餐</label>
+                        <select id="package" class="form-select">
+                            <option value="">请选择套餐类型</option>
+                            <option value="studio">Studio套餐</option>
+                            <option value="1bed">1房套餐</option>
+                            <option value="2bed">2房套餐</option>
+                            <option value="3bed">3房套餐</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" for="date">预计入住日期</label>
+                        <input type="date" id="date" class="form-input">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" for="message">留言</label>
+                        <textarea id="message" class="form-textarea" placeholder="有什么其他需求可以在这里留言..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">
+                        提交预约
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- 用户评价 -->
+        <section class="mb-6">
+            <h2 class="section-title">用户评价</h2>
+            <div class="bg-white p-4 rounded-lg mb-4">
+                <div class="flex items-start mb-3">
+                    <div class="w-8 h-8 rounded-full bg-gray-200 mr-3 overflow-hidden flex-shrink-0">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="用户头像">
+                    </div>
+                    <div>
+                        <div class="flex justify-between">
+                            <h3 class="font-medium text-sm">小张同学</h3>
+                            <div class="text-xs text-gray-400">1个月前</div>
+                        </div>
+                        <div class="flex text-yellow-400 text-xs my-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            刚来悉尼就在桔屋订了一套家具，真的省心省力！送货上门还帮忙安装，家具也都很干净，性价比超高！
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg">
+                <div class="flex items-start mb-3">
+                    <div class="w-8 h-8 rounded-full bg-gray-200 mr-3 overflow-hidden flex-shrink-0">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像">
+                    </div>
+                    <div>
+                        <div class="flex justify-between">
+                            <h3 class="font-medium text-sm">王同学</h3>
+                            <div class="text-xs text-gray-400">2个月前</div>
+                        </div>
+                        <div class="flex text-yellow-400 text-xs my-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            三个室友合租，选了3房套餐。价格合理，家具质量也挺好，最棒的是回购服务，毕业回国不用愁处理家具了！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 

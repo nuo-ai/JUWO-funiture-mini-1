@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUWO桔屋 - 服务流程</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+        }
+        .header {
+            background-color: #fff;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 12px;
+        }
+        .section-title:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: #FF8C42;
+            border-radius: 2px;
+        }
+        .process-step {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .step-number {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            width: 24px;
+            height: 24px;
+            background-color: #FF8C42;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .process-icon {
+            width: 64px;
+            height: 64px;
+            background-color: #FFF0E6;
+            color: #FF8C42;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .process-icon i {
+            font-size: 28px;
+        }
+        .info-box {
+            background-color: #FFF0E6;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #FFE7D6;
+            color: #FF8C42;
+            font-size: 12px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .buyback-feature {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .feature-circle {
+            width: 40px;
+            height: 40px;
+            background-color: #FFF0E6;
+            color: #FF8C42;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .progress-timeline {
+            position: relative;
+            margin-left: 15px;
+            padding-left: 25px;
+        }
+        .progress-timeline:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 0;
+            width: 2px;
+            background-color: #f0f0f0;
+        }
+        .timeline-point {
+            position: absolute;
+            left: -4px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background-color: #FF8C42;
+            border-radius: 50%;
+        }
+        .cta-button {
+            background-color: #FF8C42;
+            color: white;
+            padding: 12px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div class="w-full text-center font-medium">服务流程</div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="px-4 py-4">
+        <!-- 服务流程介绍 -->
+        <section class="mb-6">
+            <h2 class="section-title">简单四步，轻松搞定家具</h2>
+            <p class="text-sm text-gray-500 mb-4">
+                JUWO桔屋提供最便捷的家具解决方案，从选择到配送，再到回购，全程无忧体验。
+            </p>
+            
+            <!-- 第一步：选择套餐 -->
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold">选择套餐 & 提交意向</h3>
+                    <div class="process-icon" style="width: 40px; height: 40px; margin-bottom: 0;">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                    </div>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">浏览我们的家具套餐，找到适合您的选择</p>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">点击"立刻预约"，填写基本信息</p>
+                </div>
+                <div class="progress-timeline">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm">提交购买意向，等待客服联系</p>
+                </div>
+                <div class="flex mt-4">
+                    <div class="tag">便捷操作</div>
+                    <div class="tag">多种套餐</div>
+                    <div class="tag">灵活选择</div>
+                </div>
+            </div>
+            
+            <!-- 第二步：客服确认 -->
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold">客服确认 & 支付全款</h3>
+                    <div class="process-icon" style="width: 40px; height: 40px; margin-bottom: 0;">
+                        <i class="fas fa-comments-dollar text-lg"></i>
+                    </div>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">客服通过微信或电话与您确认订单详情</p>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">确认收货地址和配送时间</p>
+                </div>
+                <div class="progress-timeline">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm">通过银行转账或支付宝/微信支付完成付款</p>
+                </div>
+                <div class="flex mt-4">
+                    <div class="tag">专人服务</div>
+                    <div class="tag">灵活付款</div>
+                    <div class="tag">快速确认</div>
+                </div>
+            </div>
+            
+            <!-- 第三步：快速配送 -->
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold">快速配送 & 安装验收</h3>
+                    <div class="process-icon" style="width: 40px; height: 40px; margin-bottom: 0;">
+                        <i class="fas fa-truck text-lg"></i>
+                    </div>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">支付成功后，我们会安排专业团队配送</p>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">上门安装，确保所有家具正常可用</p>
+                </div>
+                <div class="progress-timeline">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm">您验收无误后，签署验收单</p>
+                </div>
+                <div class="flex mt-4">
+                    <div class="tag">免费配送</div>
+                    <div class="tag">专业安装</div>
+                    <div class="tag">悉尼全区</div>
+                </div>
+                <div class="bg-blue-50 text-blue-700 p-3 rounded-lg mt-3 text-xs">
+                    <i class="fas fa-info-circle mr-1"></i> 配送时间通常为确认订单后的3-5个工作日，具体时间将由客服与您协商。
+                </div>
+            </div>
+            
+            <!-- 第四步：一年回购 -->
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold">一年期满 & 联系回购</h3>
+                    <div class="process-icon" style="width: 40px; height: 40px; margin-bottom: 0;">
+                        <i class="fas fa-sync-alt text-lg"></i>
+                    </div>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">使用一年后，通过微信或电话联系我们</p>
+                </div>
+                <div class="progress-timeline mb-3">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm mb-3">安排上门检查家具状况</p>
+                </div>
+                <div class="progress-timeline">
+                    <div class="timeline-point"></div>
+                    <p class="text-sm">符合条件后，即刻完成回购并转账</p>
+                </div>
+                <div class="flex mt-4">
+                    <div class="tag">保值回购</div>
+                    <div class="tag">省心无忧</div>
+                    <div class="tag">快速处理</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 回购说明区 -->
+        <section class="mb-6">
+            <h2 class="section-title">无忧回购承诺</h2>
+            <div class="info-box mb-4">
+                <h3 class="font-bold text-base mb-3">回购条件</h3>
+                <p class="text-sm text-gray-700 mb-4">
+                    我们承诺，在您购买家具套餐满一年后，只要家具齐全、无灭失、无重大功能性/结构性损坏或人为暴力破坏（正常使用痕迹可接受），即可按原始套餐总价的<span class="text-orange-500 font-bold">30%</span>进行回购。
+                </p>
+                <div class="buyback-feature">
+                    <div class="feature-circle">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-sm">固定回购比例</h4>
+                        <p class="text-xs text-gray-500">固定按原价30%回购，无需担心贬值问题</p>
+                    </div>
+                </div>
+                <div class="buyback-feature">
+                    <div class="feature-circle">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-sm">简单验收标准</h4>
+                        <p class="text-xs text-gray-500">正常使用痕迹完全可以接受，无苛刻要求</p>
+                    </div>
+                </div>
+                <div class="buyback-feature">
+                    <div class="feature-circle">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-sm">灵活回购时间</h4>
+                        <p class="text-xs text-gray-500">一年后随时可联系回购，方便您的行程安排</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg mb-4">
+                <h3 class="font-bold text-base mb-2">常见问题</h3>
+                
+                <div class="mb-3">
+                    <h4 class="font-medium text-sm">一年内提前结束租约可以回购吗？</h4>
+                    <p class="text-xs text-gray-500 mt-1">
+                        一年内提前离开悉尼，可根据实际使用时间和家具状况协商回购方案，但回购价格会相应降低。
+                    </p>
+                </div>
+                
+                <div class="mb-3">
+                    <h4 class="font-medium text-sm">如果家具有小损坏怎么办？</h4>
+                    <p class="text-xs text-gray-500 mt-1">
+                        正常使用痕迹不影响回购，如小划痕、轻微磨损等。若有可修复的小损坏，我们会评估后扣除相应维修费用。
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-sm">一年后可以继续使用吗？</h4>
+                    <p class="text-xs text-gray-500 mt-1">
+                        当然可以！一年后您可以选择回购或继续使用，继续使用无需额外费用，回购权益将保留。
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 联系按钮 -->
+        <div class="sticky bottom-5 px-4 z-10" style="margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem;">
+            <a href="#" class="cta-button">
+                <i class="fas fa-comments mr-2"></i> 联系客服咨询
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

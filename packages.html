@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUWO桔屋 - 家具套餐</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+        }
+        .header {
+            background-color: #fff;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .package-tab {
+            display: flex;
+            background-color: #fff;
+            padding: 10px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .tab-item {
+            padding: 6px 16px;
+            margin: 0 5px;
+            font-size: 14px;
+            border-radius: 16px;
+            flex-shrink: 0;
+        }
+        .tab-item.active {
+            background-color: #FFF0E6;
+            color: #FF8C42;
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title:before {
+            content: "";
+            width: 4px;
+            height: 14px;
+            background-color: #FF8C42;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+        .image-gallery {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin: 0 -15px;
+            padding-left: 15px;
+        }
+        .gallery-img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #FFF0E6;
+            color: #FF8C42;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        .price-card {
+            background-color: #FFF0E6;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .price-highlight {
+            color: #FF8C42;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .cta-button {
+            background-color: #FF8C42;
+            color: white;
+            padding: 12px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+        }
+        .item-list {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .item-row:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div class="w-full text-center font-medium">家具套餐详情</div>
+    </div>
+
+    <!-- 套餐选项卡 -->
+    <div class="package-tab">
+        <div class="tab-item active">Studio套餐</div>
+        <div class="tab-item">1房套餐</div>
+        <div class="tab-item">2房套餐</div>
+        <div class="tab-item">3房套餐</div>
+    </div>
+
+    <!-- Studio套餐详情 -->
+    <div class="px-4 py-4" id="studio-package">
+        <div class="mb-5">
+            <h2 class="section-title">Studio 套餐</h2>
+            <p class="text-sm text-gray-500 mb-3">适合单间公寓，经济实用</p>
+            
+            <!-- 图片展示 -->
+            <div class="image-gallery mb-4">
+                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="卧室区域">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="冰箱洗衣机">
+                <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="书桌椅">
+            </div>
+            
+            <!-- 价格信息 -->
+            <div class="price-card">
+                <div class="flex justify-between mb-2">
+                    <div>
+                        <div class="text-sm mb-1">一年总价</div>
+                        <div class="font-bold">AUD $2000</div>
+                    </div>
+                    <div>
+                        <div class="text-sm mb-1">回购价值</div>
+                        <div class="font-bold">AUD $600</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-sm mb-1">折合每周约</div>
+                    <div class="price-highlight">AUD $29</div>
+                </div>
+            </div>
+            
+            <!-- 包含物品 -->
+            <div class="mb-4">
+                <h3 class="section-title">包含物品</h3>
+                <div class="item-list">
+                    <div class="item-row">
+                        <span class="text-sm">单人床</span>
+                        <span class="text-sm">x1</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="text-sm">冰箱</span>
+                        <span class="text-sm">x1</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="text-sm">洗衣机</span>
+                        <span class="text-sm">x1</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="text-sm">书桌椅</span>
+                        <span class="text-sm">x1</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 服务特点 -->
+            <div class="mb-5">
+                <h3 class="section-title">服务特点</h3>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="text-sm">
+                        <div class="font-medium">免费配送安装</div>
+                        <div class="text-gray-500 text-xs">悉尼地区，无需额外付费</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-pump-soap"></i>
+                    </div>
+                    <div class="text-sm">
+                        <div class="font-medium">专业消毒清洁</div>
+                        <div class="text-gray-500 text-xs">每件物品均经过专业清洁消毒</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="text-sm">
+                        <div class="font-medium">一年期满回购</div>
+                        <div class="text-gray-500 text-xs">按原价30%保证回购</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 回购说明 -->
+            <div class="bg-white p-3 rounded-lg mb-5">
+                <h3 class="font-medium mb-2">回购政策说明</h3>
+                <p class="text-xs text-gray-600 leading-5">
+                    我们承诺，在您购买家具套餐满一年后，只要家具齐全、无灭失、无重大功能性/结构性损坏或人为暴力破坏（正常使用痕迹可接受），即可按原始套餐总价的<span class="text-orange-500 font-bold">30%</span>进行回购。省去您离开时处理二手家具的烦恼！
+                </p>
+            </div>
+            
+            <!-- 预订按钮 -->
+            <a href="#" class="cta-button">立刻预约</a>
+        </div>
+    </div>
+
+    <!-- 其他套餐选项卡内容会根据选择显示 -->
+</body>
+</html> 

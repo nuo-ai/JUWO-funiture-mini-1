@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUWO桔屋 - 首页</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+        }
+        .hero-section {
+            height: 220px;
+            background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: white;
+        }
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #FFF0E6;
+            color: #FF8C42;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        .package-card {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .package-img {
+            height: 120px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .recommend-badge {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            background-color: #FF8C42;
+            color: white;
+            padding: 2px 10px;
+            font-size: 12px;
+            border-radius: 4px 0 0 4px;
+        }
+        .price-highlight {
+            color: #FF8C42;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .cta-button {
+            background-color: #FF8C42;
+            color: white;
+            border-radius: 20px;
+            padding: 8px 24px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 12px;
+        }
+        .section-title:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 3px;
+            bottom: 3px;
+            width: 4px;
+            background-color: #FF8C42;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 英雄区 -->
+    <div class="hero-section">
+        <div class="hero-overlay">
+            <h1 class="text-xl font-bold mb-2">悉尼留学生家具优选，拎包入住不是梦！</h1>
+            <p class="text-sm mb-4 opacity-90">JUWO桔屋提供平价、干净的二手家具套餐，每周$29起，一年保证回购！</p>
+            <a href="#packages" class="cta-button text-sm">查看家具套餐</a>
+        </div>
+    </div>
+
+    <!-- 服务亮点区 -->
+    <div class="px-4 py-6 bg-white">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col items-center text-center">
+                <div class="feature-icon">
+                    <i class="fas fa-dollar-sign text-xl"></i>
+                </div>
+                <div class="text-sm font-medium">价格实惠</div>
+                <div class="text-xs text-gray-500">精选二手，成本更低</div>
+            </div>
+            <div class="flex flex-col items-center text-center">
+                <div class="feature-icon">
+                    <i class="fas fa-pump-soap text-xl"></i>
+                </div>
+                <div class="text-sm font-medium">专业清洁</div>
+                <div class="text-xs text-gray-500">消毒处理，干净卫生</div>
+            </div>
+            <div class="flex flex-col items-center text-center mt-4">
+                <div class="feature-icon">
+                    <i class="fas fa-truck text-xl"></i>
+                </div>
+                <div class="text-sm font-medium">省心省力</div>
+                <div class="text-xs text-gray-500">一站配齐，快速配送</div>
+            </div>
+            <div class="flex flex-col items-center text-center mt-4">
+                <div class="feature-icon">
+                    <i class="fas fa-sync-alt text-xl"></i>
+                </div>
+                <div class="text-sm font-medium">无忧回购</div>
+                <div class="text-xs text-gray-500">一年期满，保证回收</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 家具套餐区 -->
+    <div id="packages" class="px-4 py-6">
+        <h2 class="section-title">选择适合你的家具套餐</h2>
+        
+        <div class="overflow-x-auto -mx-4 px-4">
+            <div class="flex space-x-3 pb-4" style="width: max-content;">
+                <!-- Studio套餐 -->
+                <div class="package-card bg-white w-64 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="package-img" alt="Studio套餐">
+                    <div class="p-3">
+                        <h3 class="font-bold text-base">Studio 套餐</h3>
+                        <p class="text-xs text-gray-500 mb-2">适合单间公寓，经济实用</p>
+                        <div class="text-xs text-gray-600 mb-2">
+                            <p>• 单人床</p>
+                            <p>• 冰箱</p>
+                            <p>• 洗衣机</p>
+                            <p>• 书桌椅</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-xs text-gray-500">折合每周约</div>
+                                <div class="price-highlight">AUD $29</div>
+                            </div>
+                            <a href="#" class="text-xs bg-gray-100 text-gray-800 font-medium py-1 px-3 rounded-full">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1房套餐 -->
+                <div class="package-card bg-white w-64 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="package-img" alt="1房套餐">
+                    <div class="p-3">
+                        <h3 class="font-bold text-base">1房套餐</h3>
+                        <p class="text-xs text-gray-500 mb-2">功能齐全，适合单人或情侣</p>
+                        <div class="text-xs text-gray-600 mb-2">
+                            <p>• 双人床</p>
+                            <p>• 沙发、茶几</p>
+                            <p>• 冰箱、洗衣机</p>
+                            <p>• 餐桌椅、书桌椅</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-xs text-gray-500">折合每周约</div>
+                                <div class="price-highlight">AUD $33</div>
+                            </div>
+                            <a href="#" class="text-xs bg-gray-100 text-gray-800 font-medium py-1 px-3 rounded-full">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2房套餐 -->
+                <div class="package-card bg-white w-64 rounded-lg overflow-hidden">
+                    <div class="recommend-badge">🔥推荐</div>
+                    <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="package-img" alt="2房套餐">
+                    <div class="p-3">
+                        <h3 class="font-bold text-base">2房套餐</h3>
+                        <p class="text-xs text-gray-500 mb-2">合租首选，性价比高</p>
+                        <div class="text-xs text-gray-600 mb-2">
+                            <p>• 双人床 x2</p>
+                            <p>• 沙发、茶几</p>
+                            <p>• 冰箱、洗衣机</p>
+                            <p>• 餐桌椅、书桌椅 x2</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-xs text-gray-500">折合每周约</div>
+                                <div class="price-highlight">AUD $40</div>
+                            </div>
+                            <a href="#" class="text-xs bg-gray-100 text-gray-800 font-medium py-1 px-3 rounded-full">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3房套餐 -->
+                <div class="package-card bg-white w-64 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="package-img" alt="3房套餐">
+                    <div class="p-3">
+                        <h3 class="font-bold text-base">3房套餐</h3>
+                        <p class="text-xs text-gray-500 mb-2">宽敞舒适，多人合租优选</p>
+                        <div class="text-xs text-gray-600 mb-2">
+                            <p>• 双人床 x3</p>
+                            <p>• 沙发、茶几</p>
+                            <p>• 冰箱、洗衣机</p>
+                            <p>• 餐桌椅、书桌椅 x3</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-xs text-gray-500">折合每周约</div>
+                                <div class="price-highlight">AUD $48</div>
+                            </div>
+                            <a href="#" class="text-xs bg-gray-100 text-gray-800 font-medium py-1 px-3 rounded-full">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 服务流程简介 -->
+    <div class="px-4 py-3 bg-white mt-4">
+        <h2 class="section-title mb-3">简单四步，轻松搞定家具</h2>
+        <div class="flex justify-between">
+            <div class="flex flex-col items-center text-center" style="width: 22%">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mb-2">
+                    <span class="text-orange-500 font-bold">1</span>
+                </div>
+                <span class="text-xs">选择套餐</span>
+            </div>
+            <div class="flex flex-col items-center text-center" style="width: 22%">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mb-2">
+                    <span class="text-orange-500 font-bold">2</span>
+                </div>
+                <span class="text-xs">客服确认</span>
+            </div>
+            <div class="flex flex-col items-center text-center" style="width: 22%">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mb-2">
+                    <span class="text-orange-500 font-bold">3</span>
+                </div>
+                <span class="text-xs">快速配送</span>
+            </div>
+            <div class="flex flex-col items-center text-center" style="width: 22%">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mb-2">
+                    <span class="text-orange-500 font-bold">4</span>
+                </div>
+                <span class="text-xs">一年回购</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们 -->
+    <div class="px-4 py-5 mt-4 bg-white">
+        <div class="flex items-center mb-3">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-comments text-orange-500 text-xl"></i>
+            </div>
+            <div>
+                <h3 class="font-bold text-base">准备好轻松入住悉尼了吗？</h3>
+                <p class="text-xs text-gray-500">立即联系我们的客服了解更多详情！</p>
+            </div>
+        </div>
+        <a href="#" class="block w-full bg-orange-500 text-white text-center py-3 rounded-lg font-bold">
+            立即咨询
+        </a>
+    </div>
+</body>
+</html> 
