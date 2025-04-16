@@ -1,221 +1,52 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUWO桔屋 - 微信小程序原型</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            background-color: #f5f5f7;
-            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-        }
-        .phone-container {
-            width: 375px;
-            height: 812px;
-            border-radius: 40px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            background-color: white;
-            margin: 20px;
-            display: inline-block;
-        }
-        .status-bar {
-            height: 44px;
-            background-color: #fff;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .tab-bar {
-            height: 84px;
-            background-color: #fff;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 10;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-top: 1px solid #f0f0f0;
-        }
-        .tab-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 10px;
-            color: #999;
-        }
-        .tab-item.active {
-            color: #FF8C42;
-        }
-        .tab-item i {
-            font-size: 24px;
-            margin-bottom: 4px;
-        }
-        .screen-iframe {
-            width: 100%;
-            height: calc(100% - 128px);
-            margin-top: 44px;
-            border: none;
-        }
-        .prototype-title {
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JUWO 桔屋家具小程序原型</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      color: #ff6600;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+      margin: auto;
+    }
+    li {
+      background-color: #ffffff;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #ff6600;
+    }
+  </style>
 </head>
-<body class="p-8">
-    <h1 class="text-3xl font-bold text-center mb-8">JUWO桔屋 - 微信小程序原型</h1>
-    <div class="flex flex-wrap justify-center">
-        <!-- 首页 -->
-        <div class="flex flex-col items-center">
-            <div class="prototype-title">首页</div>
-            <div class="phone-container">
-                <div class="status-bar">
-                    <span>14:21</span>
-                    <div>
-                        <span><i class="fas fa-signal"></i></span>
-                        <span class="ml-1"><i class="fas fa-wifi"></i></span>
-                        <span class="ml-1"><i class="fas fa-battery-full"></i></span>
-                    </div>
-                </div>
-                <iframe src="home.html" class="screen-iframe"></iframe>
-                <div class="tab-bar">
-                    <div class="tab-item active">
-                        <i class="fas fa-home"></i>
-                        <span>首页</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-box"></i>
-                        <span>套餐</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-sync-alt"></i>
-                        <span>回购</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-user"></i>
-                        <span>我的</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 套餐页 -->
-        <div class="flex flex-col items-center">
-            <div class="prototype-title">套餐详情</div>
-            <div class="phone-container">
-                <div class="status-bar">
-                    <span>14:21</span>
-                    <div>
-                        <span><i class="fas fa-signal"></i></span>
-                        <span class="ml-1"><i class="fas fa-wifi"></i></span>
-                        <span class="ml-1"><i class="fas fa-battery-full"></i></span>
-                    </div>
-                </div>
-                <iframe src="packages.html" class="screen-iframe"></iframe>
-                <div class="tab-bar">
-                    <div class="tab-item">
-                        <i class="fas fa-home"></i>
-                        <span>首页</span>
-                    </div>
-                    <div class="tab-item active">
-                        <i class="fas fa-box"></i>
-                        <span>套餐</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-sync-alt"></i>
-                        <span>回购</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-user"></i>
-                        <span>我的</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 服务流程页 -->
-        <div class="flex flex-col items-center">
-            <div class="prototype-title">服务流程</div>
-            <div class="phone-container">
-                <div class="status-bar">
-                    <span>14:21</span>
-                    <div>
-                        <span><i class="fas fa-signal"></i></span>
-                        <span class="ml-1"><i class="fas fa-wifi"></i></span>
-                        <span class="ml-1"><i class="fas fa-battery-full"></i></span>
-                    </div>
-                </div>
-                <iframe src="process.html" class="screen-iframe"></iframe>
-                <div class="tab-bar">
-                    <div class="tab-item">
-                        <i class="fas fa-home"></i>
-                        <span>首页</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-box"></i>
-                        <span>套餐</span>
-                    </div>
-                    <div class="tab-item active">
-                        <i class="fas fa-sync-alt"></i>
-                        <span>回购</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-user"></i>
-                        <span>我的</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 联系我们页 -->
-        <div class="flex flex-col items-center">
-            <div class="prototype-title">联系我们</div>
-            <div class="phone-container">
-                <div class="status-bar">
-                    <span>14:21</span>
-                    <div>
-                        <span><i class="fas fa-signal"></i></span>
-                        <span class="ml-1"><i class="fas fa-wifi"></i></span>
-                        <span class="ml-1"><i class="fas fa-battery-full"></i></span>
-                    </div>
-                </div>
-                <iframe src="contact.html" class="screen-iframe"></iframe>
-                <div class="tab-bar">
-                    <div class="tab-item">
-                        <i class="fas fa-home"></i>
-                        <span>首页</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-box"></i>
-                        <span>套餐</span>
-                    </div>
-                    <div class="tab-item">
-                        <i class="fas fa-sync-alt"></i>
-                        <span>回购</span>
-                    </div>
-                    <div class="tab-item active">
-                        <i class="fas fa-user"></i>
-                        <span>我的</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+  <h1>🎉 JUWO 桔屋家具小程序原型</h1>
+  <ul>
+    <li><a href="home.html">🏠 页面一：Home 页面</a></li>
+    <li><a href="packages.html">📦 页面二：套餐展示</a></li>
+    <li><a href="process.html">🛠 页面三：服务流程</a></li>
+    <li><a href="contact.html">📞 页面四：联系我们</a></li>
+  </ul>
 </body>
-</html> 
+</html>
