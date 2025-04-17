@@ -1,0 +1,104 @@
+<!-- 英雄区/主图 -->
+<view class="hero-section">
+  <view class="hero-overlay">
+    <view class="hero-title">悉尼留学生家具优选，拎包入住不是梦！</view>
+    <view class="hero-subtitle">JUWO桔屋提供平价、干净的二手家具套餐，每周$29起，一年保证回购！</view>
+    <view class="cta-button" bindtap="scrollToPackages">查看家具套餐</view>
+  </view>
+</view>
+
+<!-- 服务亮点区 -->
+<view class="features-section">
+  <view class="features-grid">
+    <view class="feature-item">
+      <view class="feature-icon">
+        <text class="iconfont icon-dollar"></text>
+      </view>
+      <view class="feature-title">价格实惠</view>
+      <view class="feature-desc">精选二手，成本更低</view>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">
+        <text class="iconfont icon-clean"></text>
+      </view>
+      <view class="feature-title">专业清洁</view>
+      <view class="feature-desc">消毒处理，干净卫生</view>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">
+        <text class="iconfont icon-truck"></text>
+      </view>
+      <view class="feature-title">省心省力</view>
+      <view class="feature-desc">一站配齐，快速配送</view>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">
+        <text class="iconfont icon-recycle"></text>
+      </view>
+      <view class="feature-title">无忧回购</view>
+      <view class="feature-desc">一年期满，保证回收</view>
+    </view>
+  </view>
+</view>
+
+<!-- 家具套餐区 -->
+<view id="packages" class="packages-section">
+  <view class="section-title">选择适合你的家具套餐</view>
+  
+  <view class="packages-grid">
+    <!-- 使用套餐卡片组件 -->
+    <package-card 
+      wx:for="{{packages}}" 
+      wx:key="id" 
+      package-info="{{item}}" 
+      button-text="查看详情" 
+      bindcardtap="onPackageCardTap"
+      bindbuttontap="onPackageButtonTap"
+    ></package-card>
+  </view>
+</view>
+
+<!-- 服务流程简介 -->
+<view class="process-section">
+  <view class="section-title">简单四步，轻松搞定家具</view>
+  <view class="process-steps">
+    <view class="process-step">
+      <view class="step-number">
+        <text>1</text>
+      </view>
+      <text class="step-text">选择套餐</text>
+    </view>
+    <view class="process-step">
+      <view class="step-number">
+        <text>2</text>
+      </view>
+      <text class="step-text">客服确认</text>
+    </view>
+    <view class="process-step">
+      <view class="step-number">
+        <text>3</text>
+      </view>
+      <text class="step-text">快速配送</text>
+    </view>
+    <view class="process-step">
+      <view class="step-number">
+        <text>4</text>
+      </view>
+      <text class="step-text">一年回购</text>
+    </view>
+  </view>
+</view>
+
+<!-- 联系我们 -->
+<view class="contact-section">
+  <view class="contact-header">
+    <view class="contact-icon">
+      <text class="iconfont icon-message"></text>
+    </view>
+    <view class="contact-text">
+      <view class="contact-title">准备好轻松入住悉尼了吗？</view>
+      <view class="contact-subtitle">立即联系我们的客服了解更多详情！</view>
+    </view>
+  </view>
+  <button class="contact-button" bindtap="contactUs">立即咨询</button>
+</view> 

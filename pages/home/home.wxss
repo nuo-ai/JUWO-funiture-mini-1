@@ -1,0 +1,302 @@
+/* 页面整体样式 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  background-color: #f8f8f8;
+  padding-bottom: 50rpx;
+}
+
+/* 英雄区样式 */
+.hero-section {
+  height: 440rpx;
+  background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40rpx;
+  color: white;
+}
+
+.hero-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.hero-subtitle {
+  font-size: 26rpx;
+  margin-bottom: 32rpx;
+  opacity: 0.9;
+}
+
+.cta-button {
+  background-color: #FF8C42;
+  color: white;
+  border-radius: 40rpx;
+  padding: 16rpx 48rpx;
+  font-weight: bold;
+  display: inline-block;
+  align-self: flex-start;
+  box-shadow: 0 8rpx 20rpx rgba(255, 140, 66, 0.3);
+  font-size: 26rpx;
+}
+
+/* 服务亮点区样式 */
+.features-section {
+  padding: 40rpx 30rpx;
+  background-color: white;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30rpx;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 96rpx;
+  height: 96rpx;
+  background-color: #FFF0E6;
+  color: #FF8C42;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16rpx;
+}
+
+.feature-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-bottom: 8rpx;
+}
+
+.feature-desc {
+  font-size: 24rpx;
+  color: #888;
+}
+
+/* 套餐区样式 */
+.packages-section {
+  padding: 40rpx 30rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  position: relative;
+  padding-left: 24rpx;
+}
+
+.section-title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8rpx;
+  bottom: 8rpx;
+  width: 8rpx;
+  background-color: #FF8C42;
+  border-radius: 4rpx;
+}
+
+/* 套餐网格布局 */
+.packages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+.packages-scroll-view {
+  width: 100%;
+}
+
+.packages-container {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+.package-card {
+  width: 500rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  background-color: white;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 8rpx 30rpx rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.recommend-badge {
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  background-color: #FF8C42;
+  color: white;
+  padding: 4rpx 20rpx;
+  font-size: 24rpx;
+  border-radius: 8rpx 0 0 8rpx;
+  z-index: 1;
+}
+
+.package-img {
+  height: 240rpx;
+  width: 100%;
+}
+
+.package-content {
+  padding: 24rpx;
+}
+
+.package-title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.package-subtitle {
+  font-size: 24rpx;
+  color: #888;
+  margin: 8rpx 0 16rpx;
+}
+
+.package-features {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+
+.feature-point {
+  margin-bottom: 6rpx;
+}
+
+.package-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.price-label {
+  font-size: 22rpx;
+  color: #888;
+}
+
+.price-highlight {
+  color: #FF8C42;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.detail-button {
+  font-size: 24rpx;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+  font-weight: 500;
+}
+
+/* 流程区样式 */
+.process-section {
+  padding: 30rpx;
+  margin-top: 30rpx;
+  background-color: white;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22%;
+}
+
+.step-number {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #FFF0E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12rpx;
+}
+
+.step-number text {
+  color: #FF8C42;
+  font-weight: bold;
+}
+
+.step-text {
+  font-size: 24rpx;
+}
+
+/* 联系区样式 */
+.contact-section {
+  background-color: white;
+  padding: 30rpx;
+  margin-top: 30rpx;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.contact-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #FFF0E6;
+  color: #FF8C42;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.contact-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.contact-subtitle {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.contact-button {
+  background-color: #FF8C42;
+  color: white;
+  border-radius: 40rpx;
+  width: 100%;
+  margin-top: 20rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 20rpx rgba(255, 140, 66, 0.3);
+  height: 80rpx;
+  line-height: 80rpx;
+} 

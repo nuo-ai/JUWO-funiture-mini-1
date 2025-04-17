@@ -1,0 +1,20 @@
+<view class="package-card" bindtap="onCardTap">
+  <view class="package-image-container">
+    <image class="package-image" src="{{packageInfo.coverImage}}" mode="aspectFill"></image>
+    <view class="package-tag" wx:if="{{packageInfo.tag}}">{{packageInfo.tag}}</view>
+  </view>
+  <view class="package-info">
+    <view class="package-title">{{packageInfo.title}}</view>
+    <view class="package-desc">{{packageInfo.description}}</view>
+    <view class="package-footer">
+      <view class="package-price">
+        <text class="price-symbol">¥</text>
+        <text class="price-value">{{packageInfo.price}}</text>
+        <text class="price-unit">/{{packageInfo.unit || '套'}}</text>
+      </view>
+      <view class="package-button" catchtap="onButtonTap">
+        <text>{{buttonText || '查看详情'}}</text>
+      </view>
+    </view>
+  </view>
+</view> 

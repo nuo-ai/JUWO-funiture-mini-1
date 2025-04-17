@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "JUWO桔屋",
+  "navigationBarBackgroundColor": "#FF8C42",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "package-card": "/components/package-card/package-card"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f8f8f8"
+} 

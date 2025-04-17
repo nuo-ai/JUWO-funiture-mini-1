@@ -1,0 +1,273 @@
+<!--pages/package-detail/package-detail.wxml-->
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在加载套餐信息...</text>
+  </view>
+
+  <view class="package-container" wx:else>
+    <!-- 轮播图区域 -->
+    <swiper class="banner-swiper" indicator-dots="{{false}}" autoplay="{{true}}" interval="5000" duration="500" bindchange="onBannerChange">
+      <swiper-item wx:for="{{package.bannerImages}}" wx:key="index">
+        <image src="{{item}}" mode="aspectFill" class="banner-image"></image>
+      </swiper-item>
+    </swiper>
+    
+    <!-- 轮播图指示器 -->
+    <view class="banner-indicator">
+      <text class="indicator-text">{{currentBannerIndex + 1}}/{{package.bannerImages.length}}</text>
+    </view>
+
+    <!-- 套餐标题和价格 -->
+    <view class="package-header">
+      <text class="package-title">{{package.title}}</text>
+      <view class="package-price-container">
+        <text class="price-symbol">¥</text>
+        <text class="package-price">{{package.price}}</text>
+        <text class="price-unit">/{{package.unit}}</text>
+      </view>
+    </view>
+
+    <!-- 套餐描述 -->
+    <view class="package-description">
+      <text>{{package.description}}</text>
+    </view>
+
+    <!-- 租期选择器 -->
+    <view class="section">
+      <view class="section-title">
+        <text>租期选择</text>
+      </view>
+      <view class="rental-options">
+        <view 
+          wx:for="{{rentalOptions}}" 
+          wx:key="id" 
+          class="rental-option {{selectedRental === item.id ? 'selected' : ''}}"
+          data-rental="{{item.id}}"
+          bindtap="selectRental"
+        >
+          <text class="rental-name">{{item.name}}</text>
+          <text class="rental-discount" wx:if="{{item.discount}}">省{{item.discount * 100}}%</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 数量选择 -->
+    <view class="section">
+      <view class="section-title">
+        <text>套餐数量</text>
+      </view>
+      <view class="quantity-selector">
+        <view class="quantity-btn {{quantity <= 1 ? 'disabled' : ''}}" bindtap="decreaseQuantity">-</view>
+        <view class="quantity-value">{{quantity}}</view>
+        <view class="quantity-btn" bindtap="increaseQuantity">+</view>
+      </view>
+    </view>
+
+    <!-- 配送日期选择 -->
+    <view class="section">
+      <view class="section-title">
+        <text>配送日期</text>
+      </view>
+      <view class="date-selector" bindtap="showDatePicker">
+        <text class="date-value">{{bookingDate}}</text>
+        <text class="date-icon iconfont icon-right"></text>
+      </view>
+    </view>
+
+    <!-- 价格计算 -->
+    <view class="price-calculator section">
+      <view class="section-title">
+        <text>价格计算</text>
+      </view>
+      <view class="price-details">
+        <view class="price-row">
+          <text class="price-label">套餐价格</text>
+          <text class="price-value">¥{{package.price}}/{{package.unit}}</text>
+        </view>
+        <view class="price-row">
+          <text class="price-label">租期选择</text>
+          <text class="price-value">{{rentalOptions[selectedRental].name}}</text>
+        </view>
+        <view class="price-row">
+          <text class="price-label">数量</text>
+          <text class="price-value">x{{quantity}}</text>
+        </view>
+        <view class="price-row" wx:if="{{originalPrice != calculatedPrice}}">
+          <text class="price-label">原价合计</text>
+          <text class="price-value original">¥{{originalPrice}}</text>
+        </view>
+        <view class="price-row total">
+          <text class="price-label">总计</text>
+          <text class="price-value highlight">¥{{calculatedPrice}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 操作按钮区 -->
+    <view class="action-buttons">
+      <button class="book-button" bindtap="goToBooking">立即预订</button>
+      <button class="contact-button" bindtap="showCustomerService">联系客服</button>
+      <button class="share-button" bindtap="showShare">分享</button>
+    </view>
+
+    <!-- 套餐特色 -->
+    <view class="section">
+      <view class="section-title">
+        <text>套餐特色</text>
+      </view>
+      <view class="features-grid">
+        <view class="feature-item" wx:for="{{package.features}}" wx:key="text">
+          <text class="feature-icon iconfont {{item.icon}}"></text>
+          <text class="feature-text">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 家具清单 -->
+    <view class="section">
+      <view class="section-title">
+        <text>家具清单</text>
+      </view>
+      <view class="item-list">
+        <view class="item" wx:for="{{package.furniture}}" wx:key="name">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-quantity">{{item.quantity}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 配件清单 -->
+    <view class="section">
+      <view class="section-title">
+        <text>配件清单</text>
+      </view>
+      <view class="item-list">
+        <view class="item" wx:for="{{package.accessories}}" wx:key="name">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-quantity">{{item.quantity}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 常见问题 -->
+    <view class="section">
+      <view class="section-title">
+        <text>常见问题</text>
+      </view>
+      <view class="faq-list">
+        <view class="faq-item" wx:for="{{package.faqs}}" wx:key="id" bindtap="toggleFaq" data-id="{{item.id}}">
+          <view class="faq-question">
+            <text>{{item.question}}</text>
+            <text class="faq-arrow iconfont {{expandedFaqIds.indexOf(item.id) > -1 ? 'icon-up' : 'icon-right'}}"></text>
+          </view>
+          <view class="faq-answer {{expandedFaqIds.indexOf(item.id) > -1 ? '' : 'hidden'}}">
+            <text>{{item.answer}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 用户评价 -->
+    <view class="section">
+      <view class="section-title">
+        <text>用户评价</text>
+      </view>
+      <view class="reviews-list">
+        <view class="review-item" wx:for="{{package.reviews}}" wx:key="index">
+          <view class="review-header">
+            <text class="reviewer-name">{{item.name}}</text>
+            <text class="review-date">{{item.date}}</text>
+          </view>
+          <view class="rating">
+            <text class="iconfont icon-star star-filled" wx:for="{{item.rating}}" wx:key="index"></text>
+            <text class="iconfont icon-star star-empty" wx:for="{{5 - item.rating}}" wx:key="index"></text>
+          </view>
+          <text class="review-content">{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 日期选择器 -->
+  <view class="modal-mask" wx:if="{{showDatePicker}}" bindtap="cancelDatePicker">
+    <view class="date-picker-container" catchtap="preventBubble">
+      <view class="date-picker-header">
+        <text class="date-picker-title">选择配送日期</text>
+        <text class="date-picker-close" bindtap="cancelDatePicker">取消</text>
+      </view>
+      <picker 
+        mode="date" 
+        value="{{bookingDate}}" 
+        start="{{minDate}}" 
+        end="2025-12-31" 
+        bindchange="dateChange"
+        class="date-picker"
+      >
+        <view class="picker-view">
+          <text class="selected-date">{{bookingDate}}</text>
+          <text class="picker-hint">点击修改日期</text>
+        </view>
+      </picker>
+      <button class="confirm-date-btn" bindtap="confirmDatePicker">确认</button>
+    </view>
+  </view>
+
+  <!-- 联系客服模态框 -->
+  <view class="modal-mask" wx:if="{{showCustomerServiceModal}}" bindtap="hideCustomerService">
+    <view class="modal-content" catchtap="preventBubble">
+      <view class="modal-header">
+        <text class="modal-title">联系客服</text>
+        <text class="modal-close" bindtap="hideCustomerService">×</text>
+      </view>
+      <view class="modal-body">
+        <view class="contact-item" bindtap="makePhoneCall">
+          <text class="contact-icon iconfont icon-phone"></text>
+          <view class="contact-info">
+            <text class="contact-label">客服电话</text>
+            <text class="contact-value">{{package.customerService.phone}}</text>
+          </view>
+        </view>
+        <view class="contact-divider"></view>
+        <view class="contact-item" bindtap="copyWechat">
+          <text class="contact-icon iconfont icon-message"></text>
+          <view class="contact-info">
+            <text class="contact-label">微信客服</text>
+            <text class="contact-value">{{package.customerService.wechat}}</text>
+          </view>
+          <text class="copy-hint">(点击复制)</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分享模态框 -->
+  <view class="modal-mask" wx:if="{{showShareModal}}" bindtap="hideShare">
+    <view class="modal-content share-modal" catchtap="preventBubble">
+      <view class="modal-header">
+        <text class="modal-title">分享套餐</text>
+        <text class="modal-close" bindtap="hideShare">×</text>
+      </view>
+      <view class="modal-body">
+        <view class="share-options">
+          <button class="share-option" open-type="share">
+            <text class="share-icon iconfont icon-wechat"></text>
+            <text class="share-text">微信好友</text>
+          </button>
+          <view class="share-option" bindtap="shareToMoments">
+            <text class="share-icon iconfont icon-moments"></text>
+            <text class="share-text">朋友圈</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 防止冒泡的空方法 -->
+<wxs module="preventBubble">
+  module.exports = function(e) {
+    e.stopPropagation();
+  }
+</wxs> 

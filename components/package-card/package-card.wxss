@@ -1,0 +1,94 @@
+.package-card {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 20rpx;
+}
+
+.package-image-container {
+  width: 100%;
+  height: 360rpx;
+  position: relative;
+}
+
+.package-image {
+  width: 100%;
+  height: 100%;
+}
+
+.package-tag {
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  background-color: #ff4d4f;
+  color: #ffffff;
+  font-size: 24rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 0 16rpx 16rpx 0;
+}
+
+.package-info {
+  padding: 20rpx;
+}
+
+.package-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.package-desc {
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 16rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  height: 74rpx;
+}
+
+.package-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.package-price {
+  display: flex;
+  align-items: baseline;
+}
+
+.price-symbol {
+  font-size: 24rpx;
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.price-value {
+  font-size: 36rpx;
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.price-unit {
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 4rpx;
+}
+
+.package-button {
+  background-color: #ff4d4f;
+  color: #ffffff;
+  font-size: 26rpx;
+  padding: 8rpx 24rpx;
+  border-radius: 30rpx;
+} 
