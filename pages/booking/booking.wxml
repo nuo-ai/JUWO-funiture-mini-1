@@ -1,0 +1,147 @@
+<view class="booking-container">
+  <!-- 头部信息 -->
+  <view class="booking-header">
+    <view class="package-info">
+      <view class="package-name">{{packageName}}</view>
+      <view class="package-id">套餐编号：{{packageId}}</view>
+    </view>
+  </view>
+
+  <!-- 预约表单 -->
+  <view class="booking-form">
+    <view class="form-title">填写预约信息</view>
+    
+    <!-- 姓名 -->
+    <view class="form-item">
+      <view class="form-label">姓名</view>
+      <input class="form-input" model:value="{{form.name}}" placeholder="请输入您的姓名" maxlength="20" />
+    </view>
+    
+    <!-- 手机号 -->
+    <view class="form-item">
+      <view class="form-label">手机号</view>
+      <input class="form-input" type="number" model:value="{{form.phone}}" placeholder="请输入您的手机号" maxlength="11" />
+    </view>
+    
+    <!-- 地址 -->
+    <view class="form-item">
+      <view class="form-label">地址</view>
+      <view class="address-container" bindtap="chooseLocation">
+        <input class="form-input address-input" disabled value="{{form.address}}" placeholder="点击选择地址" />
+        <view class="address-icon">
+          <van-icon name="location-o" size="20px" color="#999" />
+        </view>
+      </view>
+    </view>
+    
+    <!-- 详细地址 -->
+    <view class="form-item">
+      <view class="form-label">详细地址</view>
+      <input class="form-input" model:value="{{form.addressDetail}}" placeholder="请输入详细地址，如单元门牌号等" />
+    </view>
+    
+    <!-- 预约日期 -->
+    <view class="form-item">
+      <view class="form-label">预约日期</view>
+      <picker mode="date" value="{{form.date}}" start="{{minDate}}" end="{{maxDate}}" bindchange="onDateChange">
+        <view class="picker-view">
+          <text class="picker-text">{{form.date || '请选择预约日期'}}</text>
+          <van-icon name="arrow" size="16px" color="#999" />
+        </view>
+      </picker>
+    </view>
+    
+    <!-- 预约时间段 -->
+    <view class="form-item">
+      <view class="form-label">时间段</view>
+      <picker mode="selector" range="{{timeSlots}}" value="{{timeSlotIndex}}" bindchange="onTimeSlotChange">
+        <view class="picker-view">
+          <text class="picker-text">{{form.timeSlot || '请选择时间段'}}</text>
+          <van-icon name="arrow" size="16px" color="#999" />
+        </view>
+      </picker>
+    </view>
+    
+    <!-- 备注 -->
+    <view class="form-item textarea-item">
+      <view class="form-label">备注</view>
+      <textarea class="form-textarea" model:value="{{form.remark}}" placeholder="如有其他需求请在此说明（选填）" maxlength="200" />
+      <view class="textarea-counter">{{form.remark.length}}/200</view>
+    </view>
+  </view>
+  
+  <!-- 隐私政策 -->
+  <view class="privacy-policy">
+    <checkbox-group bindchange="onPrivacyChange">
+      <checkbox value="agreed" checked="{{privacyAgreed}}" color="#ff4d4f" />
+      <text class="policy-text">我已阅读并同意</text>
+      <text class="policy-link" bindtap="showPrivacyPolicy">《用户服务协议》</text>
+      <text class="policy-text">和</text>
+      <text class="policy-link" bindtap="showPrivacyPolicy">《隐私政策》</text>
+    </checkbox-group>
+  </view>
+  
+  <!-- 提交按钮 -->
+  <view class="submit-section">
+    <button class="submit-button {{submitDisabled ? 'disabled' : ''}}" disabled="{{submitDisabled}}" bindtap="submitBooking">提交预约</button>
+  </view>
+  
+  <!-- 隐私政策弹窗 -->
+  <view class="modal-mask" wx:if="{{showPrivacyModal}}" bindtap="hidePrivacyModal">
+    <view class="modal-content" catchtap="preventBubble">
+      <view class="modal-header">
+        <view class="modal-title">用户协议与隐私政策</view>
+        <view class="modal-close" bindtap="hidePrivacyModal">
+          <van-icon name="cross" size="20px" />
+        </view>
+      </view>
+      <scroll-view class="modal-body privacy-content" scroll-y>
+        <view class="privacy-title">一、服务协议</view>
+        <view class="privacy-paragraph">
+          感谢您选择JUWO桔屋家具服务。本协议是您与JUWO桔屋之间关于使用本服务所订立的协议。
+        </view>
+        <view class="privacy-paragraph">
+          1. 本服务为JUWO桔屋提供的家具销售、配送及相关服务。
+        </view>
+        <view class="privacy-paragraph">
+          2. 用户在使用本服务前应仔细阅读本协议，确保完全理解本协议内容。
+        </view>
+        <view class="privacy-paragraph">
+          3. 用户一旦通过预约表单提交信息，即视为用户已阅读并同意本协议的全部内容。
+        </view>
+        
+        <view class="privacy-title">二、隐私政策</view>
+        <view class="privacy-paragraph">
+          JUWO桔屋非常重视您的隐私保护，我们将按照本隐私政策收集、使用和保护您的个人信息。
+        </view>
+        <view class="privacy-paragraph">
+          1. 我们收集的信息：姓名、联系电话、地址等预约信息，以便为您提供家具配送和安装服务。
+        </view>
+        <view class="privacy-paragraph">
+          2. 信息使用：我们将使用您的信息联系您确认预约、安排配送、提供售后服务等。
+        </view>
+        <view class="privacy-paragraph">
+          3. 信息保护：我们采取严格的数据安全措施保护您的个人信息，防止信息泄露、损毁或丢失。
+        </view>
+        <view class="privacy-paragraph">
+          4. 信息共享：除法律法规规定或获得您的明确授权外，我们不会与任何第三方分享您的个人信息。
+        </view>
+      </scroll-view>
+      <view class="modal-footer">
+        <button class="modal-button" bindtap="hidePrivacyModal">我已阅读并同意</button>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 预约成功弹窗 -->
+  <view class="modal-mask" wx:if="{{showSuccessModal}}" bindtap="hideSuccessModal">
+    <view class="modal-content success-modal" catchtap="preventBubble">
+      <view class="success-icon">
+        <van-icon name="checked" size="60px" color="#07c160" />
+      </view>
+      <view class="success-title">预约成功</view>
+      <view class="success-message">我们的客服将在24小时内与您联系确认详情</view>
+      <button class="success-button" bindtap="goBack">返回</button>
+    </view>
+  </view>
+</view> 

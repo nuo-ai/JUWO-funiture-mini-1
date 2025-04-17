@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'iconfont';
+  /* 由于微信小程序限制，无法使用本地字体文件，我们使用base64编码的字体文件 */
+  src: url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAO8AAsAAAAAB6wAAANvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDGIJoATYCJAMMCwgABCAFhG0HQRvuBsgOJUGBwAAQAQVgPHyt/e/c3UeCAXVgMh0x5EVJE0VC0kqHLNE8Mv/hv/d72Qs+F2JUeZV0JRnpg86FTu5MbnPbndBdSOpEQuiAAP0/l+M3qYDyA5rLOoA6i0pbAo5DOxT7ETigKMdyYTG5Mf5lb88F4hmXaQGHrD+4mh4wD3Q2wDsKa0K+JIw3jN2kPMHtBFoLsaA7tjYVygSZF4hLi5UQZsqoysCgtBQquxZmPJO0ytN4ip7ix+NfmxhJKjKecXi6Nqfz54lfc3zNCSPBAJ3OBjaOjBVAJo4r7ScUHH+F0jrZl7kBtEqS+Ln4Fc88fy2WQWtG0Sp/eJQkK0TFqNkUdiDn4udqIhE/PzgJJ8G4gXdApdLGZsAVYGwjjHyVfA93ZcP0pptzcnpWVqJ2z3wVJGfXTtR0j4+3jgL16tXlBw/KYRLOPXmLnxTdPZrS2Yfu1eTOY5XCqe9uxsPZJ/i+pOd5jrS0R0+n5I69zt/y1Asvw9QQgzYd2dE7nTh5x5sZl7fuXpw28Zc8vmpZLdDnvBcrtue+LLuVceVDL9Vgx5/qY0Pnx3amLnqSPT9l2uCgQZx61/bFbmzesuAv+eM9e1PG5/QceTqlDL5pXzrR1Dw8NjM4JHPCQBXGY/RUQcf2Sjs66B+fHBy4gU3Sxy+cPxmGcGIL49Pnnw4HLXXOxPiBvYPjQ2Jlx1bti2QQDlZLm4RLbpFsKTvZbMmG6nzEVOY3FgtG7i8PbC/O7B92rrB5XmH0/vLA5mJirvgpUX3Tv1FS67xV/VaL/xf4Xf5PswNfNV3Kr/Zf1dV/tMuCv7mHVTX+XwT9J+dQpXk41RSKRa1u6WWoIiK8OUNG0CrVR7hPjfXvb13Dv4Oo1BoT2sgkkqo5ZGmtUGixiqpyG7S2Wzza9iK9YskJ2K0zCKHbK5JOb5B1e0GW1gcKg75Q1R0NWgdjbGu7xcqo4xNYhBZkK2ZItY5Iz7BX9YeUYpNgVa4U91GKUz7ZarCIjrCNeIiYR0p5KLZYZdQoD7kDYeYcWKU0qhwl8gzpbG63rXuobzyjRmhAZIWyQFQzQygtR0jdw7z6/CEKhZUIa+Mricch2XIWPmVVPRKdECc1bwFxPqQorUPCJkyZISMZD7KC2M7EuFQyVIoTo6CQTiN1YnbWjbqV29c3vM+D1pKHGClylKhTHdpI7WgIAA==') format('woff2');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 定义各个图标的编码 */
+.icon-dollar:before {
+  content: "\e698";
+}
+
+.icon-clean:before {
+  content: "\e63e";
+}
+
+.icon-truck:before {
+  content: "\e640";
+}
+
+.icon-recycle:before {
+  content: "\e632";
+}
+
+.icon-message:before {
+  content: "\e635";
+}
+
+.icon-right:before {
+  content: "\e6a3";
+}
+
+.icon-phone:before {
+  content: "\e64c";
+}
+
+.icon-share:before {
+  content: "\e656";
+}
+
+.icon-star:before {
+  content: "\e611";
+}
+
+.icon-location:before {
+  content: "\e619";
+}
+
+.icon-time:before {
+  content: "\e65f";
+} 

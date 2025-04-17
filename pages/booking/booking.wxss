@@ -1,0 +1,306 @@
+/* pages/booking/booking.wxss */
+page {
+  background-color: #f5f5f5;
+}
+
+.booking-container {
+  padding-bottom: 40rpx;
+}
+
+/* 头部信息 */
+.booking-header {
+  background-color: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.package-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.package-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.package-id {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 预约表单 */
+.booking-form {
+  background-color: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.form-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+  position: relative;
+  padding-left: 20rpx;
+}
+
+.form-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8rpx;
+  height: 32rpx;
+  background-color: #ff4d4f;
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.form-label {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.form-input {
+  width: 100%;
+  height: 80rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+  background-color: #fff;
+}
+
+.address-container {
+  position: relative;
+}
+
+.address-input {
+  padding-right: 60rpx;
+}
+
+.address-icon {
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.picker-view {
+  width: 100%;
+  height: 80rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.picker-text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.textarea-item {
+  position: relative;
+}
+
+.form-textarea {
+  width: 100%;
+  height: 200rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.textarea-counter {
+  position: absolute;
+  right: 20rpx;
+  bottom: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 隐私政策 */
+.privacy-policy {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.policy-text {
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+
+.policy-link {
+  font-size: 24rpx;
+  color: #ff4d4f;
+}
+
+/* 提交按钮 */
+.submit-section {
+  padding: 0 30rpx;
+}
+
+.submit-button {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff4d4f;
+  color: #ffffff;
+  font-size: 32rpx;
+  border-radius: 45rpx;
+  font-weight: normal;
+}
+
+.submit-button.disabled {
+  background-color: #cccccc;
+  color: #ffffff;
+}
+
+/* 模态框 */
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-close {
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 30rpx;
+}
+
+.privacy-content {
+  max-height: 600rpx;
+}
+
+.privacy-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  margin-top: 30rpx;
+}
+
+.privacy-title:first-child {
+  margin-top: 0;
+}
+
+.privacy-paragraph {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15rpx;
+}
+
+.modal-footer {
+  padding: 20rpx 30rpx 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-button {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff4d4f;
+  color: #ffffff;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  font-weight: normal;
+}
+
+/* 成功模态框 */
+.success-modal {
+  padding: 50rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-icon {
+  margin-bottom: 30rpx;
+}
+
+.success-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.success-message {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.success-button {
+  width: 80%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff4d4f;
+  color: #ffffff;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  font-weight: normal;
+} 

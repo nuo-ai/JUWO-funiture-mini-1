@@ -1,0 +1,248 @@
+<!-- 企业介绍卡片 -->
+<view class="about-card">
+  <view class="flex items-center">
+    <view class="avatar">
+      <image src="{{company.logo}}" mode="aspectFill"></image>
+    </view>
+    <view>
+      <view class="company-name">{{company.name}}</view>
+      <view class="company-subtitle">{{company.subtitle}}</view>
+      <view class="company-badge">全悉尼配送</view>
+    </view>
+  </view>
+  <view class="company-desc">{{company.description}}</view>
+</view>
+
+<!-- 联系方式部分 -->
+<view class="section">
+  <view class="section-title">联系方式</view>
+  <view class="contact-item" bindtap="copyWechat">
+    <view class="contact-icon">
+      <text class="iconfont icon-wechat"></text>
+    </view>
+    <view>
+      <view class="contact-label">微信咨询</view>
+      <view class="contact-value">{{company.contact.wechat}}</view>
+    </view>
+  </view>
+  
+  <view class="contact-item" bindtap="callPhone">
+    <view class="contact-icon">
+      <text class="iconfont icon-phone"></text>
+    </view>
+    <view>
+      <view class="contact-label">电话咨询</view>
+      <view class="contact-value">{{company.contact.phone}}</view>
+    </view>
+  </view>
+  
+  <view class="contact-item" bindtap="sendEmail">
+    <view class="contact-icon">
+      <text class="iconfont icon-email"></text>
+    </view>
+    <view>
+      <view class="contact-label">邮箱咨询</view>
+      <view class="contact-value">{{company.contact.email}}</view>
+    </view>
+  </view>
+  
+  <view class="contact-item">
+    <view class="contact-icon">
+      <text class="iconfont icon-time"></text>
+    </view>
+    <view>
+      <view class="contact-label">服务时间</view>
+      <view class="contact-value">{{company.workingHours}}</view>
+    </view>
+  </view>
+  
+  <view class="contact-item">
+    <view class="contact-icon">
+      <text class="iconfont icon-location"></text>
+    </view>
+    <view>
+      <view class="contact-label">服务范围</view>
+      <view class="contact-value">{{company.contact.serviceArea}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 快速预约部分 -->
+<view class="section">
+  <view class="section-title">快速预约</view>
+  <view class="form-card">
+    <form bindsubmit="submitAppointment">
+      <view class="form-group">
+        <text class="form-label">您的姓名</text>
+        <input class="form-input" name="name" placeholder="请输入您的姓名" />
+      </view>
+      
+      <view class="form-group">
+        <text class="form-label">联系方式</text>
+        <input class="form-input" name="contact" placeholder="手机号/微信/邮箱" />
+      </view>
+      
+      <view class="form-group">
+        <text class="form-label">意向套餐</text>
+        <picker class="form-select" range="{{packages}}" range-key="name" value="{{packageIndex}}" bindchange="packageChange">
+          <view>{{packageIndex > -1 ? packages[packageIndex].name : '请选择意向套餐'}}</view>
+        </picker>
+      </view>
+      
+      <view class="form-group">
+        <text class="form-label">预计入住日期</text>
+        <picker class="form-select" mode="date" value="{{appointmentDate}}" start="{{minDate}}" bindchange="dateChange">
+          <view>{{appointmentDate || '请选择预计入住日期'}}</view>
+        </picker>
+      </view>
+      
+      <view class="form-group">
+        <text class="form-label">备注信息</text>
+        <textarea class="form-textarea" name="message" placeholder="可填写房屋情况或对家具的特殊需求等"></textarea>
+      </view>
+      
+      <button class="submit-button" form-type="submit">提交预约</button>
+    </form>
+  </view>
+</view>
+
+<!-- 用户评价部分 -->
+<view class="section">
+  <view class="section-title">用户评价</view>
+  <block wx:for="{{reviews}}" wx:key="id">
+    <view class="review-card">
+      <view class="review-header">
+        <image class="reviewer-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+        <view class="reviewer-info">
+          <view class="reviewer-name">{{item.userName}}</view>
+          <view class="rating">
+            <block wx:for="{{5}}" wx:key="*this" wx:for-item="star">
+              <text class="iconfont icon-star" style="color: {{star <= item.rating ? '#FFBF47' : '#E0E0E0'}}"></text>
+            </block>
+          </view>
+          <view class="review-time">{{item.timeText}}</view>
+        </view>
+      </view>
+      <view class="review-content">{{item.content}}</view>
+    </view>
+  </block>
+</view>
+
+<!-- 联系我们页面主体 -->
+<view class="contact-container">
+  <view class="page-header">
+    <view class="header-title">联系我们</view>
+    <view class="header-subtitle">感谢您对JUWO桔屋的关注，我们期待为您服务</view>
+  </view>
+  
+  <!-- 联系信息卡片 -->
+  <view class="card">
+    <view class="card-title">联系方式</view>
+    <view class="contact-item" bindtap="copyWechat">
+      <view class="contact-icon">
+        <text class="iconfont icon-wechat"></text>
+      </view>
+      <view class="contact-detail">
+        <view class="contact-label">微信号</view>
+        <view class="contact-value">{{company.contact.wechat}}</view>
+      </view>
+    </view>
+    
+    <view class="contact-item" bindtap="callPhone">
+      <view class="contact-icon">
+        <text class="iconfont icon-phone"></text>
+      </view>
+      <view class="contact-detail">
+        <view class="contact-label">联系电话</view>
+        <view class="contact-value">{{company.contact.phone}}</view>
+      </view>
+    </view>
+    
+    <view class="contact-item" bindtap="sendEmail">
+      <view class="contact-icon">
+        <text class="iconfont icon-email"></text>
+      </view>
+      <view class="contact-detail">
+        <view class="contact-label">电子邮箱</view>
+        <view class="contact-value">{{company.contact.email}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 地址地图卡片 -->
+  <view class="card">
+    <view class="card-title">我们的位置</view>
+    <map 
+      class="location-map" 
+      latitude="{{markers[0].latitude}}" 
+      longitude="{{markers[0].longitude}}" 
+      markers="{{markers}}"
+      scale="14"
+      show-location>
+    </map>
+  </view>
+  
+  <!-- 在线留言卡片 -->
+  <view class="card">
+    <view class="card-title">在线留言</view>
+    <form bindsubmit="submitForm">
+      <view class="form-group">
+        <view class="form-label">您的姓名 (选填)</view>
+        <input 
+          class="form-input" 
+          name="name" 
+          placeholder="请输入您的姓名" 
+          value="{{formData.name}}"
+          bindinput="inputName"
+        />
+      </view>
+      
+      <view class="form-group">
+        <view class="form-label">联系电话 *</view>
+        <input 
+          class="form-input" 
+          name="phone" 
+          placeholder="请输入您的联系电话" 
+          value="{{formData.phone}}"
+          bindinput="inputPhone"
+        />
+        <view class="form-error" wx:if="{{errors.phone}}">{{errors.phone}}</view>
+      </view>
+      
+      <view class="form-group">
+        <view class="form-label">留言内容 *</view>
+        <textarea 
+          class="form-textarea" 
+          name="message" 
+          placeholder="请输入您的留言内容" 
+          value="{{formData.message}}"
+          bindinput="inputMessage"
+        ></textarea>
+        <view class="form-error" wx:if="{{errors.message}}">{{errors.message}}</view>
+      </view>
+      
+      <button 
+        class="submit-button" 
+        form-type="submit" 
+        loading="{{submitting}}" 
+        disabled="{{submitting}}"
+      >
+        {{submitting ? '提交中...' : '提交留言'}}
+      </button>
+    </form>
+  </view>
+</view>
+
+<!-- 成功提交弹窗 -->
+<view class="modal" wx:if="{{showSuccessModal}}">
+  <view class="modal-content">
+    <view class="success-icon">
+      <text class="iconfont icon-success" style="font-size: 120rpx; color: #52c41a;"></text>
+    </view>
+    <view class="modal-title">提交成功</view>
+    <view class="modal-message">
+      感谢您的留言，我们会尽快与您联系！
+    </view>
+    <view class="modal-button" bindtap="closeSuccessModal">确定</view>
+  </view>
+</view> 
