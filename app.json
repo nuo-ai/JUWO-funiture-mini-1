@@ -20,20 +20,20 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "assets/icons/home.png",
-        "selectedIconPath": "assets/icons/home-active.png"
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home-active.png"
       },
       {
         "pagePath": "pages/package-detail/package-detail",
         "text": "套餐",
-        "iconPath": "assets/icons/package.png",
-        "selectedIconPath": "assets/icons/package-active.png"
+        "iconPath": "static/images/tabbar/package.png",
+        "selectedIconPath": "static/images/tabbar/package-active.png"
       },
       {
         "pagePath": "pages/contact/contact",
         "text": "联系",
-        "iconPath": "assets/icons/contact.png",
-        "selectedIconPath": "assets/icons/contact-active.png"
+        "iconPath": "static/images/tabbar/contact.png",
+        "selectedIconPath": "static/images/tabbar/contact-active.png"
       }
     ]
   },
