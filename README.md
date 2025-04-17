@@ -54,4 +54,52 @@
 
 1. 使用微信开发者工具打开项目
 2. 确保AppID已正确配置
-3. 编译运行查看效果 
+3. 编译运行查看效果
+
+## 功能特点
+
+- 套餐浏览：查看各种家具套餐
+- 详情查看：获取套餐详细信息和价格
+- 客服联系：与客服进行沟通
+- 下单预约：在线预订家具套餐
+
+## 项目设置
+
+### 安装依赖
+
+本项目使用了 Vant Weapp 组件库，需要先安装依赖：
+
+```bash
+# 安装依赖
+npm install
+```
+
+### 构建 npm 包
+
+在微信开发者工具中，执行以下步骤：
+
+1. 点击工具栏中的 "工具"
+2. 选择 "构建 npm"
+3. 等待构建完成
+
+这样才能正确使用 Vant 组件库。
+
+## Vant Weapp 组件
+
+本项目使用 Vant Weapp 组件库，已在 app.json 中全局引入以下组件：
+
+- van-button：按钮组件
+- van-icon：图标组件
+- van-cell：单元格组件
+- van-cell-group：单元格组组件
+- van-toast：轻提示组件
+- van-dialog：对话框组件
+- van-tab 和 van-tabs：标签页组件
+
+在页面中可以直接使用这些组件，例如：
+
+```html
+<van-button type="primary">按钮</van-button>
+```
+
+更多组件和用法请参考 [Vant Weapp 官方文档](https://youzan.github.io/vant-weapp)。 

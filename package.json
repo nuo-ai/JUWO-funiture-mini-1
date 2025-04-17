@@ -1,0 +1,15 @@
+{
+  "name": "juwo-funiture-mini",
+  "version": "1.0.0",
+  "description": "这是一个为悉尼国际留学生提供家具套餐服务的微信小程序。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.11.7"
+  }
+}
