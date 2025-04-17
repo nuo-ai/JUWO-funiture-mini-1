@@ -19,21 +19,15 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "assets/icons/home.png",
-        "selectedIconPath": "assets/icons/home-active.png"
+        "text": "首页"
       },
       {
         "pagePath": "pages/package-detail/package-detail",
-        "text": "套餐",
-        "iconPath": "assets/icons/package.png",
-        "selectedIconPath": "assets/icons/package-active.png"
+        "text": "套餐"
       },
       {
         "pagePath": "pages/contact/contact",
-        "text": "联系",
-        "iconPath": "assets/icons/contact.png",
-        "selectedIconPath": "assets/icons/contact-active.png"
+        "text": "联系"
       }
     ]
   },
